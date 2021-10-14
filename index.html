@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <h1 class="title">Binge List</h1>
+      </div>
+    </header>
+    <main class="main">
+      <button class="btn btn-green btn-large" id="addShowBtn">Add show</button>
+      <div class="shows-grid" id="showsGrid"></div>
+    </main>
+    <footer class="footer">
+      <p>Copyright ©CambyCult 2021 </p>
+    </footer>
+    <div class="modal" id="addShowModal">
+      <form class="add-show-form" id="addShowForm">
+        <h3 class="big-title">Add new show</h3>
+        <input
+          class="input"
+          type="text"
+          id="title"
+          placeholder="Title"
+          required
+        />
+        <p class="error-msg" id="errorMsg"></p>
+        <input
+          class="input"
+          type="number"
+          id="episodes"
+          placeholder="Episodes"
+          required
+        />
+        <div class="is-watched">
+          <label for="is-watched">Have you watched it?</label>
+          <input class="checkbox" type="checkbox" id="isWatched" />
+        </div>
+        <button class="btn btn-green btn-medium" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="modal" id="accountModal"></div>
+    <div class="overlay" id="overlay"></div>
+  </body>
+</html>
