@@ -216,30 +216,27 @@ const restoreLocal = () => {
   }
 }
 
-// Auth
-// Firestore
+class Main{
 
-// Utils
+  constructor(){
+    this.addShowModal = new addShowModal(this);
+    this.library = new Library(this);
+    this.localLibrary = this.getLocalStorage();
+  }
 
-const docsToShows = (docs) => {
-  return docs.map((doc) => {
-    return new Show(
-      doc.data().title,
-      doc.data().episodes,
-      doc.data().isWatched
-    )
-  })
-}
+  getLocalStorage() {
+    if (!localStorage.getItem(Library)) {
+      localStorage.setItem(Library, JSON.stringify([]));
+    }
+  }
 
-const JSONToShow = (show) => {
-  return new Show(show.title, show.episodes, show.isWatched)
-}
+  saveLocalStorage() {
+    localStorage.setItem(
+      'Library', JSON.stringify(this.localLibrary));
+  }
 
-const showToDoc = (show) => {
-  return {
-    title: show.title,
-    episodes: show.episodes,
-    isWatched: show.isWatched,
-    
+    setUp(){
+      this.addShowModeal.setUp();
+      this.library.display();
   }
 }
